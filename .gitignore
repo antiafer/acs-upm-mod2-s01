@@ -1,0 +1,17 @@
+# instructor material: kept out of the public repository
+solutions/
+
+# notebook outputs and scratch files
+*.parquet
+*.gpkg
+broken/
+cert-*.png
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# build by-products
+*.pdf
+
+# macOS
+.DS_Store

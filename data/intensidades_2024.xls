@@ -1,0 +1,16 @@
+<html><head><meta charset='utf-8'></head><body>
+<table border='1'>
+<tr><th>Id</th><th>Punto de medida</th><th>IMD 2024 (veh/dia)</th></tr>
+<tr><td>1001</td><td>PM-0001</td><td>17.955</td></tr>
+<tr><td>1002</td><td>PM-0002</td><td>9.597</td></tr>
+<tr><td>1003</td><td>PM-0003</td><td>20.783</td></tr>
+<tr><td>1004</td><td>PM-0004</td><td>18.607</td></tr>
+<tr><td>1005</td><td>PM-0005</td><td>20.093</td></tr>
+<tr><td>1006</td><td>PM-0006</td><td>22.505</td></tr>
+<tr><td>1007</td><td>PM-0007</td><td>24.596</td></tr>
+<tr><td>1008</td><td>PM-0008</td><td>5.557</td></tr>
+<tr><td>1009</td><td>PM-0009</td><td>17.934</td></tr>
+<tr><td>1010</td><td>PM-0010</td><td>10.099</td></tr>
+<tr><td>1011</td><td>PM-0011</td><td>6.950</td></tr>
+<tr><td>1012</td><td>PM-0012</td><td>20.646</td></tr>
+</table></body></html>
