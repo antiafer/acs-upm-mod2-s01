@@ -1,4 +1,8 @@
 # instructor material: kept out of the public repository
+# (gitignore has no inline comments: keep each pattern on its own line)
+# master/    -> the source notebooks, with the answers
+# solutions/ -> the instructor versions built from them
+master/
 solutions/
 
 # notebook outputs and scratch files

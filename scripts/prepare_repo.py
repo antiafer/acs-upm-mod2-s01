@@ -2,7 +2,7 @@
 
     python scripts/prepare_repo.py https://github.com/ORG/acs-upm-mod2-s01
 
-It rewrites REPO in the notebook builder, regenerates the four notebooks, and writes the
+It rewrites REPO in the master notebooks, rebuilds both versions of each lab, and writes the
 "Open in Colab" links into README.md and DEPLOY.md. Run it once, before the first push.
 """
 import os
@@ -39,12 +39,23 @@ def main():
     url, org, repo = normalise(sys.argv[1])
     branch = sys.argv[2] if len(sys.argv) > 2 else "main"
 
-    builder = os.path.join(BASE, "scripts", "build_notebooks.py")
-    src = open(builder, encoding="utf-8").read()
-    if not re.search(r'REPO = "[^"]*"', src):
-        sys.exit("Could not find the REPO line in build_notebooks.py")
-    new = re.sub(r'REPO = "[^"]*"', f'REPO = "{url}.git"', src)
-    open(builder, "w", encoding="utf-8").write(new)
+    master = os.path.join(BASE, "master")
+    if not os.path.isdir(master):
+        sys.exit(f"No master/ folder at {master}. It holds the source notebooks.")
+    stamped = 0
+    for name in sorted(os.listdir(master)):
+        if not name.endswith(".ipynb"):
+            continue
+        path = os.path.join(master, name)
+        src = open(path, encoding="utf-8").read()
+        if not re.search(r'REPO = \\"[^"]*\\"', src):
+            continue
+        open(path, "w", encoding="utf-8").write(
+            re.sub(r'REPO = \\"[^"]*\\"', f'REPO = \\"{url}.git\\"', src))
+        stamped += 1
+    if not stamped:
+        sys.exit("Could not find a REPO line in any master notebook.")
+    builder = os.path.join(BASE, "scripts", "build_labs.py")
     subprocess.run([sys.executable, builder], check=True, cwd=BASE)
 
     links = "\n".join(

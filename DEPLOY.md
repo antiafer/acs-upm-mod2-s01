@@ -16,8 +16,8 @@ The whole folder is 4.8 MB, so the data fit in an ordinary public repository wit
    https://colab.research.google.com/github/ORG/acs-upm-mod2-s01/blob/main/notebooks/Lab_1_1_reading_files.ipynb
    ```
 3. Shorten it and put it on the cover slide, which already shows `bit.ly/acs-mod2-s1`.
-4. Open `scripts/build_notebooks.py`, set `REPO` to your repository URL, and rebuild:
-   `python scripts/build_notebooks.py`.
+4. Run `python scripts/prepare_repo.py <your repository URL>`, which stamps `REPO` into the
+   master notebooks and rebuilds both versions of each lab.
 
 The student clicks the link, Colab opens the notebook read-only, and the first cell clones the data
 into `/content`. When they edit anything Colab offers **Save a copy in Drive**, which puts their
@@ -36,7 +36,7 @@ Use it when the repository cannot be public.
 5. Cell 0 mounts Drive, asks for permission once, and finds `MyDrive/ACS-UPM/Mod2-S01`.
 
 If you place the folder somewhere else in Drive, change `DRIVE` at the top of cell 0 (and in
-`scripts/build_notebooks.py`) to match.
+the master notebooks in `master/`) to match.
 
 ## What cell 0 does
 

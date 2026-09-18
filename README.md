@@ -16,14 +16,17 @@ ETSI Caminos, Canales y Puertos, Universidad Politécnica de Madrid.
 |-- notebooks/                         student versions, pushed to GitHub
 |   |-- Lab_1_1_reading_files.ipynb
 |   '-- Lab_1_2_object_and_field.ipynb
-|-- solutions/                         instructor versions, excluded by .gitignore
+|-- master/                            SOURCE notebooks, with the answers; never pushed
+|   |-- Lab_1_1_reading_files.ipynb
+|   '-- Lab_1_2_object_and_field.ipynb
+|-- solutions/                         instructor versions built from master/, never pushed
 |   |-- Lab_1_1_reading_files_SOLUTION.ipynb
 |   '-- Lab_1_2_object_and_field_SOLUTION.ipynb
 |-- data/                              session dataset (generated)
 |-- figuras/                           deck figures generated from the data
 |-- scripts/
 |   |-- make_data.py                   generates data/ and prints the expected assert values
-|   |-- build_notebooks.py             generates both versions of each notebook from one source
+|   |-- build_labs.py                  builds notebooks/ and solutions/ from master/
 |   |-- make_figures.py                generates figuras/ from data/
 |   |-- tpl.py                         component library that reproduces the template
 |   |-- build_tpl.py                   builds the deck from those components
@@ -31,8 +34,7 @@ ETSI Caminos, Canales y Puertos, Universidad Politécnica de Madrid.
 |-- SOURCES.md                         provenance, licence and date of the data
 |-- DEPLOY.md                          how to publish the labs to Colab, with a diagram
 |-- PUSH.md                            the four commands to push this folder to GitHub
-|-- .gitignore                         keeps solutions/ out of the public repository
-|-- solutions/                         instructor notebooks, not pushed
+|-- .gitignore                         keeps master/ and solutions/ out of the public repository
 '-- notebooks/                         student notebooks, pushed
 ```
 
@@ -41,7 +43,7 @@ ETSI Caminos, Canales y Puertos, Universidad Politécnica de Madrid.
 ```bash
 pip install pandas numpy matplotlib openpyxl pyarrow geopandas rasterio scipy laspy
 python scripts/make_data.py --comprobar     # writes data/ and prints the expected values
-python scripts/build_notebooks.py
+python scripts/build_labs.py
 python scripts/make_figures.py
 jupyter lab notebooks/
 ```
@@ -51,8 +53,8 @@ Data are preloaded: nothing is downloaded in class.
 
 ## How the notebooks are edited
 
-All four notebooks are generated from one source, `scripts/build_notebooks.py`, using the nbgrader
-convention:
+Each lab has **one** source: its notebook in `master/`. You edit that one, in Jupyter or in Colab,
+like any other notebook. Answers go inside the nbgrader marker pair:
 
 ```python
 ### BEGIN SOLUTION
@@ -60,8 +62,15 @@ result = frame.groupby(key).mean()      # an illustration, not a real answer
 ### END SOLUTION
 ```
 
-In the student version that block becomes `# YOUR CODE HERE` and `raise NotImplementedError`,
-indentation preserved. Do not edit the `.ipynb` files directly: they are overwritten on rebuild.
+`python scripts/build_labs.py` then writes two versions of every master notebook: the one in
+`notebooks/`, where each block above becomes `# YOUR CODE HERE` and `raise NotImplementedError`
+with the indentation preserved, and the one in `solutions/`, where only the marker lines are
+removed. Outputs are stripped from both, so no execution result is ever published.
+
+`master/` and `solutions/` are in `.gitignore`. **Keep it that way**: anything pushed is public,
+including a script that happens to contain the answers.
+
+Do not edit `notebooks/` or `solutions/` directly. They are overwritten on every rebuild.
 
 ## Verification before teaching
 
@@ -134,7 +143,8 @@ Start with `PUSH.md`: four commands. Then see `DEPLOY.md` and the diagram in `fi
 GitHub repository and hand out a `colab.research.google.com/github/...` link, or upload it to Drive
 and have students add a shortcut to My Drive. The first cell of each notebook detects which of the
 three situations it is in and sets `BASE`, `DATA` and `WORK` accordingly, so students never edit a
-path. Set `REPO` and `DRIVE` at the top of `scripts/build_notebooks.py` before rebuilding.
+path. `scripts/prepare_repo.py` sets `REPO` in the master notebooks for you; set `DRIVE` there by hand
+if you move the Drive folder.
 
 ## Language
 

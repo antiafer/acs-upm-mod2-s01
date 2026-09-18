@@ -16,8 +16,9 @@ git remote add origin https://github.com/ORG/acs-upm-mod2-s01.git
 git push -u origin main
 ```
 
-`solutions/` is in `.gitignore`, so the instructor notebooks stay out of the public repository.
-Keep them in a private folder, or in a second private repository.
+`master/` and `solutions/` are in `.gitignore`, so neither the source notebooks nor the instructor
+versions reach the public repository. Before every push, check that what you are about to publish
+contains no answers: `git status --short` and, if in doubt, `git diff --cached`.
 
 After the push, the links printed by `prepare_repo.py` are the ones to hand to students. Check one
 of them in a private browser window, logged out, before class.
@@ -25,7 +26,8 @@ of them in a private browser window, logged out, before class.
 ## If you prefer the GitHub web interface
 
 Create the repository, then **Add file → Upload files**, and drag the whole folder in. Two caveats:
-the browser uploader does not read `.gitignore`, so delete `solutions/` from your copy first, and
+the browser uploader does not read `.gitignore`, so delete `master/` and `solutions/` from your
+copy first, and
 it will not upload empty folders.
 
 ## Size
