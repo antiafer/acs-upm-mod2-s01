@@ -92,6 +92,12 @@ EOF
 ```
 
 Lab 1.2 consumes `top10.parquet`, produced by exercise 6 of Lab 1.1. Run them in order.
+When that file is missing, Lab 1.2 falls back to `data/top10_reference.parquet`, so it also
+runs on its own. That reference is written by `master/make_top10_reference.py`, which
+executes the Lab 1.1 solution notebook and keeps its output, so there is no second copy
+of the pipeline to drift. **If you replace the synthetic data with real downloads, run it
+again**, or Lab 1.2 will silently answer the question of the session with the old points.
+It is the one `.parquet` exempted from `.gitignore`, because students need it.
 
 ## The deck and the template
 

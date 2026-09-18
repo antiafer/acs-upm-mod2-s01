@@ -7,6 +7,7 @@ solutions/
 
 # notebook outputs and scratch files
 *.parquet
+!data/top10_reference.parquet
 *.gpkg
 broken/
 cert-*.png
