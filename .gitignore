@@ -11,6 +11,7 @@ solutions/
 *.gpkg
 broken/
 cert-*.png
+notebooks/*.png
 .ipynb_checkpoints/
 __pycache__/
 *.pyc
@@ -20,3 +21,8 @@ __pycache__/
 
 # macOS
 .DS_Store
+
+# session 2 ships PDFs and a GeoPackage as course data:
+# they must survive the patterns above
+!data/*.pdf
+!data/*.gpkg

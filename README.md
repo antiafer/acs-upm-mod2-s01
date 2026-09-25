@@ -1,8 +1,11 @@
-# Session 1 — From file to structure: data models in civil engineering
+# Module 2 — Data Fusion, Preparation and Visualization applied to Civil Engineering
 
-Teaching material for session 1 of Module 2 (*Data Fusion, Preparation and Visualization applied
-to Civil Engineering*), ACS-UPM Diploma in Engineering, Data Science and Artificial Intelligence.
-ETSI Caminos, Canales y Puertos, Universidad Politécnica de Madrid.
+Teaching material for Module 2 of the ACS-UPM Diploma in Engineering, Data Science and
+Artificial Intelligence. ETSI Caminos, Canales y Puertos, Universidad Politécnica de Madrid.
+
+- **Session 1 — From file to structure:** data models in civil engineering.
+- **Session 2 — Extraction and validation:** getting data out of PDFs, web tables and satellite
+  imagery, and checking it against an independent source.
 
 ## Contents
 
@@ -15,14 +18,14 @@ ETSI Caminos, Canales y Puertos, Universidad Politécnica de Madrid.
 |-- tpl_media/                         logos and cover background extracted from the template
 |-- notebooks/                         student versions, pushed to GitHub
 |   |-- Lab_1_1_reading_files.ipynb
-|   '-- Lab_1_2_object_and_field.ipynb
+|   |-- Lab_1_2_object_and_field.ipynb
+|   |-- Lab_2_1_extraction_and_validation.ipynb
+|   '-- Lab_2_2_web_table_and_satellite.ipynb
 |-- master/                            SOURCE notebooks, with the answers; never pushed
-|   |-- Lab_1_1_reading_files.ipynb
-|   '-- Lab_1_2_object_and_field.ipynb
+|   '-- one per lab, same file names as notebooks/
 |-- solutions/                         instructor versions built from master/, never pushed
-|   |-- Lab_1_1_reading_files_SOLUTION.ipynb
-|   '-- Lab_1_2_object_and_field_SOLUTION.ipynb
-|-- data/                              session dataset (generated)
+|   '-- one per lab, with the _SOLUTION suffix
+|-- data/                              datasets for both sessions (generated)
 |-- figuras/                           deck figures generated from the data
 |-- scripts/
 |   |-- make_data.py                   generates data/ and prints the expected assert values
@@ -30,8 +33,10 @@ ETSI Caminos, Canales y Puertos, Universidad Politécnica de Madrid.
 |   |-- make_figures.py                generates figuras/ from data/
 |   |-- tpl.py                         component library that reproduces the template
 |   |-- build_tpl.py                   builds the deck from those components
-|   '-- build_calendar_slide.py        builds slide 2 on its own, as a one-slide file
-|-- SOURCES.md                         provenance, licence and date of the data
+|   |-- build_calendar_slide.py        builds slide 2 on its own, as a one-slide file
+|   '-- s02/                           the same tooling for session 2
+|-- SOURCES.md                         provenance, licence and date of the session 1 data
+|-- SOURCES_session2.md                the same for session 2
 |-- DEPLOY.md                          how to publish the labs to Colab, with a diagram
 |-- PUSH.md                            the four commands to push this folder to GitHub
 |-- .gitignore                         keeps master/ and solutions/ out of the public repository
@@ -251,4 +256,6 @@ slide 34.
 
 - [Lab_1_1_reading_files.ipynb](https://colab.research.google.com/github/antiafer/acs-upm-mod2-s01/blob/main/notebooks/Lab_1_1_reading_files.ipynb)  [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/antiafer/acs-upm-mod2-s01/blob/main/notebooks/Lab_1_1_reading_files.ipynb)
 - [Lab_1_2_object_and_field.ipynb](https://colab.research.google.com/github/antiafer/acs-upm-mod2-s01/blob/main/notebooks/Lab_1_2_object_and_field.ipynb)  [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/antiafer/acs-upm-mod2-s01/blob/main/notebooks/Lab_1_2_object_and_field.ipynb)
+- [Lab_2_1_extraction_and_validation.ipynb](https://colab.research.google.com/github/antiafer/acs-upm-mod2-s01/blob/main/notebooks/Lab_2_1_extraction_and_validation.ipynb)  [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/antiafer/acs-upm-mod2-s01/blob/main/notebooks/Lab_2_1_extraction_and_validation.ipynb)
+- [Lab_2_2_web_table_and_satellite.ipynb](https://colab.research.google.com/github/antiafer/acs-upm-mod2-s01/blob/main/notebooks/Lab_2_2_web_table_and_satellite.ipynb)  [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/antiafer/acs-upm-mod2-s01/blob/main/notebooks/Lab_2_2_web_table_and_satellite.ipynb)
 <!-- /COLAB -->

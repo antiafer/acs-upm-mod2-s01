@@ -11,7 +11,9 @@ import subprocess
 import sys
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-NOTEBOOKS = ["Lab_1_1_reading_files.ipynb", "Lab_1_2_object_and_field.ipynb"]
+NOTEBOOKS = ["Lab_1_1_reading_files.ipynb", "Lab_1_2_object_and_field.ipynb",
+             "Lab_2_1_extraction_and_validation.ipynb",
+             "Lab_2_2_web_table_and_satellite.ipynb"]
 BADGE = "https://colab.research.google.com/assets/colab-badge.svg"
 
 

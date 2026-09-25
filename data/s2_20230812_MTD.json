@@ -1,0 +1,20 @@
+{
+  "PRODUCT_ID": "S2B_MSIL2A_20230812T105619_N0511_R094_T30TVK",
+  "PROCESSING_BASELINE": "05.11",
+  "SENSING_DATE": "2023-08-12",
+  "QUANTIFICATION_VALUE": 10000,
+  "BOA_ADD_OFFSET": {
+    "B02": -1000,
+    "B03": -1000,
+    "B04": -1000,
+    "B08": -1000
+  },
+  "SCL_CLASSES": {
+    "3": "sombra de nube",
+    "4": "vegetacion",
+    "6": "agua",
+    "8": "nube probable",
+    "9": "nube alta probabilidad"
+  },
+  "NOTA": "Producto sintetico con fines docentes. No corresponde a una adquisicion real."
+}
